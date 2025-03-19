@@ -76,7 +76,7 @@ export default function QuranTherpy() {
                       {therapy.quranVerse.arabic}
                     </p>
                     <p className="text-sm text-gray-700 italic mb-1">
-                      "{therapy.quranVerse.translation}"
+                      &quot;{therapy.quranVerse.translation}&quot;
                     </p>
                     <p className="text-xs text-gray-500 text-right">
                       {therapy.quranVerse.reference}

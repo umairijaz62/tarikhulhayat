@@ -37,8 +37,8 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-300 rounded-lg transform rotate-[1.5deg]"></div>
             <div className="relative bg-white py-4 px-12 rounded-lg border border-amber-200 shadow-md">
               <p className="text-base text-gray-700 italic">
-                "Whoever takes a path upon which to obtain knowledge, Allah
-                makes the path to Paradise easy for him."
+                &quot;Whoever takes a path upon which to obtain knowledge, Allah
+                makes the path to Paradise easy for him.&quot;
               </p>
               <p className="text-xs text-right mt-2 text-gray-600">
                 — Prophet Muhammad ﷺ (Sahih Muslim)
