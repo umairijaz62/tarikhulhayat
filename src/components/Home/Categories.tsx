@@ -49,10 +49,15 @@ export default function Categoriescategories() {
           variants={container}
           initial="hidden"
           whileInView="show"
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
           {categories.map((categories) => (
-            <motion.div key={categories.id} variants={item}>
+            <motion.div
+              key={categories.id}
+              variants={item}
+              transition={{ duration: 0.5 }}
+            >
               <Link href={`/categories/#${categories.id}`}>
                 <Card className="h-full w-full flex flex-col hover:shadow-md transition-all cursor-pointer border-amber-100 hover:border-amber-300 hover:bg-white">
                   <CardContent className="pt-4 pb-2 flex-grow">

@@ -39,7 +39,7 @@ export default function QuranTherpy() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center space-y-4 text-center mb-8"
         >
@@ -54,12 +54,17 @@ export default function QuranTherpy() {
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           variants={container}
+          transition={{ duration: 0.8 }}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
         >
           {QuranTherapies.map((therapy) => (
-            <motion.div key={therapy.id} variants={item}>
+            <motion.div
+              key={therapy.id}
+              variants={item}
+              transition={{ duration: 0.8 }}
+            >
               <Card className="h-full hover:shadow-md transition-shadow border-amber-100">
                 <CardHeader className="pb-2">
                   <div className="flex items-center mb-2">

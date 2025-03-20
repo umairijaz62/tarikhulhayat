@@ -12,6 +12,7 @@ export default function Hero() {
           className="flex flex-col items-center space-y-4 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
           <h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-5xl text-transparent bg-linear-to-r from-amber-300 to-white bg-clip-text leading-tight">
             Islamic Heritage Chronicles

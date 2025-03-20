@@ -56,7 +56,11 @@ export default function Feature() {
             viewport={{ once: true }}
           >
             {featuredBlogs.map((blog) => (
-              <motion.div key={blog.id} variants={item}>
+              <motion.div
+                key={blog.id}
+                variants={item}
+                transition={{ duration: 0.8 }}
+              >
                 <Link href={`/blog/${blog.id}`}>
                   <Card className="h-full flex flex-col hover:shadow-md transition-shadow cursor-pointer">
                     <CardHeader>
