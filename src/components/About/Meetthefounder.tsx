@@ -51,10 +51,10 @@ export default function Meetthefounder() {
             </span>
           </div>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-            Umair Hayat
+            Umair Muhammad
           </h2>
           <p className="text-gray-700 mb-4">
-            Umair Hayat, a devoted student of Islamic history, founded
+            Umair Muhammad, a devoted student of Islamic history, founded
             Tarikh-ul-Hayat out of a deep-rooted passion to reconnect today’s
             generation with the timeless legacy of Islamic civilization. For
             him, history isn’t just a collection of ancient tales—it’s a living
