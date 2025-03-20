@@ -22,7 +22,7 @@ export default function Meetthefounder() {
             />
             {/* Overlay with motion */}
             <div className="absolute inset-0 bg-amber-200 opacity-75 flex flex-col items-center justify-center text-center text-gray-800 text-sm font-medium px-4 translate-y-100 group-hover:translate-y-0 duration-500 ease-in-">
-              <p className="mb-2">"Connect With Founder"</p>
+              <p className="mb-2">&quot;Connect With Founder&quot;</p>
               {/* Social Links */}
               <div className="flex space-x-3 mt-2">
                 <a

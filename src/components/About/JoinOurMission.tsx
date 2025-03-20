@@ -16,13 +16,13 @@ export default function JoinOurMission() {
           Join Our Mission
         </h2>
         <p className="text-gray-700 mb-8 max-w-2xl mx-auto">
-          Tarikh-ul-Hayat is more than just a website—it's a movement to
+          Tarikh-ul-Hayat is more than just a website—it&apos;s a movement to
           reconnect Muslims with their intellectual and spiritual heritage. We
           invite you to join us in this journey of discovery and revival.
         </p>
         <blockquote className="bg-white p-6 rounded-lg shadow-sm max-w-2xl mx-auto italic text-gray-700 mb-8">
-          "The example of guidance and knowledge with which Allah has sent me is
-          like abundant rain falling on the earth..."
+          &quot;The example of guidance and knowledge with which Allah has sent
+          me is like abundant rain falling on the earth...&quot;
           <footer className="text-right text-sm text-gray-500 mt-4">
             — Prophet Muhammad ﷺ (Sahih al-Bukhari)
           </footer>

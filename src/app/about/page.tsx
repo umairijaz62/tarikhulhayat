@@ -15,7 +15,6 @@ export default function page() {
         <Approach />
         <Meetthefounder />
         <JoinOurMission />
-        {/* <AllStuff /> */}
       </div>
     </>
   );
