@@ -3,41 +3,31 @@ export interface Category {
   name: string;
   description: string;
   icon: string;
-  imageUrl: string;
-  count: number;
 }
 
 export const categories: Category[] = [
   {
-    id: "seerah",
+    id: "Seerah",
     name: "Seerah",
     description: "Life of Prophet Muhammad ﷺ",
     icon: "user",
-    imageUrl: "/seerah.svg",
-    count: 15
   },
   {
-    id: "khilafat",
+    id: "Khilafat-e-Rashida",
     name: "Khilafat-e-Rashida",
     description: "The Rightly Guided Caliphs",
     icon: "users",
-    imageUrl: "/khilafat.svg",
-    count: 12
   },
   {
-    id: "islamic-history",
-    name: "Islamic History",
+    id: "Asraar-e-Deen",
+    name: "Asraar-e-Deen",
     description: "Major events in Islamic history",
     icon: "book",
-    imageUrl: "/islamic-history.svg",
-    count: 20
   },
   {
-    id: "quran-therapy",
-    name: "Healing Through Quran",
+    id: "Qalb-e-Noor",
+    name: "Qalb-e-Noor",
     description: "Quranic solutions for modern problems",
     icon: "heart",
-    imageUrl: "/quran-therapy.svg",
-    count: 10
   }
 ];

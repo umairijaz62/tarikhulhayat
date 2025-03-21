@@ -14,7 +14,6 @@ export default function Footer() {
     <footer className="w-full py-8 bg-amber-200 border-t border-amber-500">
       <div className="container px-4 md:px-10 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo and Description */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center gap-2 mb-2">
               <BookOpen className="h-5 w-5 text-amber-500" />
@@ -35,7 +34,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-sm mb-3 text-gray-900">
               Quick Links
@@ -65,10 +63,10 @@ export default function Footer() {
                 <div
                   className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
                   onClick={() => {
-                    window.location.href = "/categories";
+                    window.location.href = "/blogs";
                   }}
                 >
-                  Categories
+                  Blogs
                 </div>
               </li>
               <li>
@@ -96,7 +94,7 @@ export default function Footer() {
                   onClick={() => {
                     // Clear hash first to ensure event triggers even when already on page
                     window.location.hash = "";
-                    window.location.href = "/categories#seerah";
+                    window.location.href = "/blogs#Seerah";
                   }}
                 >
                   Seerah
@@ -106,9 +104,8 @@ export default function Footer() {
                 <div
                   className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
                   onClick={() => {
-                    // Clear hash first to ensure event triggers even when already on page
                     window.location.hash = "";
-                    window.location.href = "/categories#khilafat";
+                    window.location.href = "/blogs#Khilafat-e-Rashida";
                   }}
                 >
                   Khilafat-e-Rashida
@@ -118,24 +115,22 @@ export default function Footer() {
                 <div
                   className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
                   onClick={() => {
-                    // Clear hash first to ensure event triggers even when already on page
                     window.location.hash = "";
-                    window.location.href = "/categories#islamic-history";
+                    window.location.href = "/blogs#Asraar-e-Deen";
                   }}
                 >
-                  Islamic History
+                  Asraar-e-Deen
                 </div>
               </li>
               <li>
                 <div
                   className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
                   onClick={() => {
-                    // Clear hash first to ensure event triggers even when already on page
                     window.location.hash = "";
-                    window.location.href = "/categories#quran-therapy";
+                    window.location.href = "/blogs#Qalb-e-Noor";
                   }}
                 >
-                  Healing Through Quran
+                  Qalb-e-Noor
                 </div>
               </li>
             </ul>

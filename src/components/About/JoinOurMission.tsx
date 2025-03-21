@@ -1,6 +1,6 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input"; // Using shadcn/ui Input component
+import { Input } from "@/components/ui/input";
 import { motion } from "framer-motion";
 
 export default function JoinOurMission() {
@@ -33,7 +33,6 @@ export default function JoinOurMission() {
           initiative.
         </p>
 
-        {/* Subscription Box */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-md mx-auto">
           <Input
             type="email"

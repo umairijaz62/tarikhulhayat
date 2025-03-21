@@ -1,9 +1,9 @@
 "use client";
-import { blogs } from "@/constant/blog";
+import { blogs } from "@/constants/blogs";
+import AnimatedButton from "@/custom/AnimateButton";
 import { motion } from "framer-motion";
 import { ArrowRight, Badge, Clock } from "lucide-react";
 import Link from "next/link";
-import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
@@ -61,7 +61,7 @@ export default function Feature() {
                 variants={item}
                 transition={{ duration: 0.8 }}
               >
-                <Link href={`/blog/${blog.id}`}>
+                <Link href={`/blogs/${blog.id}`}>
                   <Card className="h-full flex flex-col hover:shadow-md transition-shadow cursor-pointer">
                     <CardHeader>
                       <div className="flex justify-between items-start">
@@ -99,10 +99,14 @@ export default function Feature() {
             viewport={{ once: true }}
           >
             <Link href="/categories">
-              <Button className="mt-8 bg-amber-500 hover:bg-amber-600 text-white">
-                View All Articles
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              <AnimatedButton
+                text="View All Articles"
+                className="mt-8 p-2 bg-amber-500 hover:bg-amber-600 rounded-md text-white group flex items-center  transition-all duration-300 overflow-hidden"
+              >
+                <span className="inline-block max-w-0 opacity-0 ml-0 group-hover:max-w-[16px] group-hover:ml-2 group-hover:opacity-100 transition-all duration-300">
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </AnimatedButton>
             </Link>
           </motion.div>
         </div>

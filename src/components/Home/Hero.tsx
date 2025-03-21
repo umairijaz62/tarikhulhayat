@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
-import { BookOpen, ThumbsUp } from "lucide-react";
+import { BookOpen } from "lucide-react";
+import Link from "next/link";
 import { Button } from "../ui/button";
 export default function Hero() {
   return (
@@ -22,17 +23,21 @@ export default function Hero() {
             heritage and find Quranic solutions to modern challenges.
           </p>
           <div className="flex flex-wrap gap-4 justify-center mt-2">
-            <Button className="bg-amber-500 hover:bg-amber-600 text-white md:p-6 cursor-pointer">
-              <BookOpen className="mr-2 h-4 w-4" />
-              Explore Blogs
-            </Button>
-            <Button
-              variant="outline"
-              className="border-amber-500 text-amber-500 hover:bg-amber-50 md:p-6 cursor-pointer"
-            >
-              <ThumbsUp className="mr-2 h-4 w-4" />
-              Quran Therapy
-            </Button>
+            <Link href={"/blogs"}>
+              <Button className="bg-amber-500 hover:bg-amber-600 text-white md:p-6 cursor-pointer">
+                <BookOpen className="mr-2 h-4 w-4" />
+                Explore Blogs
+              </Button>
+            </Link>
+            {/* <Link href={"about"}>
+              <Button
+                variant="outline"
+                className="border-amber-500 text-amber-500 hover:bg-amber-50 md:p-6 cursor-pointer"
+              >
+                <Target className="mr-2 h-4 w-4" />
+                About Us
+              </Button>
+            </Link> */}
           </div>
           <div className="w-full max-w-md mx-auto mt-6 relative">
             <div className="absolute inset-0 bg-gradient-to-r from-amber-500 to-amber-300 rounded-lg transform rotate-[1.5deg]"></div>

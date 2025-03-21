@@ -1,5 +1,5 @@
 "use client";
-import { QuranTherapies } from "@/constant/QuranTherapies";
+import { QuranTherapies } from "@/constants/QuranTherapies";
 import { motion } from "framer-motion";
 import {
   Banknote,
