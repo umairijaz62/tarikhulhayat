@@ -26,10 +26,10 @@ const TermsAndConditions: React.FC = () => {
       <ul className="list-disc list-inside mb-4 space-y-2">
         <li>
           <strong>Affiliate</strong> means an entity that controls, is
-          controlled by or is under common control with a party, where "control"
-          means ownership of 50% or more of the shares, equity interest or other
-          securities entitled to vote for election of directors or other
-          managing authority.
+          controlled by or is under common control with a party, where
+          &quot;control&quot; means ownership of 50% or more of the shares,
+          equity interest or other securities entitled to vote for election of
+          directors or other managing authority.
         </li>
         <li>
           <strong>Country</strong> refers to: Pakistan
@@ -165,15 +165,15 @@ const TermsAndConditions: React.FC = () => {
       </p>
 
       <h2 className="text-2xl font-semibold mb-2">
-        "AS IS" and "AS AVAILABLE" Disclaimer
+        &quot;AS IS&quot; and &quot;AS AVAILABLE&quot; Disclaimer
       </h2>
       <p className="mb-4">
-        The Service is provided to You "AS IS" and "AS AVAILABLE" and with all
-        faults and defects without warranty of any kind. To the maximum extent
-        permitted under applicable law, the Company, on its own behalf and on
-        behalf of its Affiliates and its and their respective licensors and
-        service providers, expressly disclaims all warranties, whether express,
-        implied, statutory or otherwise.
+        The Service is provided to You &quot;AS IS&quot; and &quot;AS
+        AVAILABLE&quot; and with all faults and defects without warranty of any
+        kind. To the maximum extent permitted under applicable law, the Company,
+        on its own behalf and on behalf of its Affiliates and its and their
+        respective licensors and service providers, expressly disclaims all
+        warranties, whether express, implied, statutory or otherwise.
       </p>
       <p className="mb-4">
         Without limitation to the foregoing, the Company provides no warranty or
@@ -217,8 +217,8 @@ const TermsAndConditions: React.FC = () => {
       <p className="mb-4">
         You represent and warrant that (i) You are not located in a country that
         is subject to the United States government embargo, or designated as a
-        "terrorist supporting" country, and (ii) You are not listed on any
-        United States government list of prohibited or restricted parties.
+        &quot;terrorist supporting&quot; country, and (ii) You are not listed on
+        any United States government list of prohibited or restricted parties.
       </p>
 
       <h2 className="text-2xl font-semibold mb-2">Severability and Waiver</h2>
