@@ -71,8 +71,8 @@ const ContactPage = () => {
             Get in Touch
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have questions or suggestions for Tarikh-ul-Hayat? We'd love to hear
-            from you.
+            Have questions or suggestions for Tarikh-ul-Hayat? We&apos;d love to
+            hear from you.
           </p>
         </motion.div>
 
@@ -116,8 +116,8 @@ const ContactPage = () => {
               <Card className="border-amber-100">
                 <CardContent className="p-6">
                   <blockquote className="border-l-4 border-amber-500 pl-4 italic text-gray-700">
-                    "The ink of the scholar is more sacred than the blood of the
-                    martyr."
+                    &quot;The ink of the scholar is more sacred than the blood
+                    of the martyr.&quot;
                     <footer className="text-right text-sm text-gray-500 mt-2">
                       — Islamic Tradition
                     </footer>
@@ -137,8 +137,8 @@ const ContactPage = () => {
               <CardHeader>
                 <CardTitle>Send us a Message</CardTitle>
                 <CardDescription>
-                  Fill out the form below and we'll get back to you as soon as
-                  possible.
+                  Fill out the form below and we&apos;ll get back to you as soon
+                  as possible.
                 </CardDescription>
               </CardHeader>
               <CardContent>

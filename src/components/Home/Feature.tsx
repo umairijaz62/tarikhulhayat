@@ -1,5 +1,5 @@
 "use client";
-import { blogs } from "@/constants/blogs";
+import { blogs } from "@/constants/blogs/allblogs";
 import AnimatedButton from "@/custom/AnimateButton";
 import { motion } from "framer-motion";
 import { ArrowRight, Badge, Clock } from "lucide-react";

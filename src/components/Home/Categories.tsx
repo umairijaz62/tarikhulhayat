@@ -1,5 +1,5 @@
 "use client";
-import { blogs } from "@/constants/blogs"; // Import blogs
+import { blogs } from "@/constants/blogs/allblogs";
 import { categories } from "@/constants/categories";
 import { motion } from "framer-motion";
 import { Book, ChevronRight, Heart, User, Users } from "lucide-react";

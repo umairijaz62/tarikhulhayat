@@ -2,7 +2,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import { blogs } from "@/constants/blogs";
+import { blogs } from "@/constants/blogs/allblogs";
 import { motion } from "framer-motion";
 import { ArrowLeft, CalendarDays, Clock, User } from "lucide-react";
 import Link from "next/link";
@@ -15,8 +15,7 @@ const BlogDetail = () => {
 
   const blog = blogs.find((b) => b.id === blogId);
 
-  // Language state
-  const [language, setLanguage] = useState<"english" | "urdu">("english");
+  const [language, setLanguage] = useState("english");
 
   if (!blog) {
     return (
@@ -26,7 +25,8 @@ const BlogDetail = () => {
             Article Not Found
           </h1>
           <p className="text-gray-600 mb-6">
-            The article you're looking for doesn't exist or has been removed.
+            The article you&apos;re looking for doesn&apos;t exist or has been
+            removed.
           </p>
           <Link href="/categories">
             <Button className="bg-amber-500 hover:bg-amber-600 text-white">
@@ -47,7 +47,6 @@ const BlogDetail = () => {
       className="container px-4 md:px-6 lg:px-8 py-12"
     >
       <div className="max-w-4xl mx-auto relative">
-        {/* Back Button */}
         <div className="mb-8">
           <Link href="/categories">
             <Button variant="ghost" size="sm" className="hover:bg-amber-100">
@@ -57,7 +56,6 @@ const BlogDetail = () => {
           </Link>
         </div>
 
-        {/* Blog Title Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -95,14 +93,12 @@ const BlogDetail = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
         </div>
 
-        {/* Language Switcher under Image */}
         <div className="flex justify-end mb-8">
           <div className="flex items-center gap-2">
-            {/* <Languages className="h-5 w-5 text-gray-700" /> */}
             <Button
               size="sm"
               onClick={() => setLanguage("english")}
-              className={`${
+              className={`$ {
                 language === "english"
                   ? "bg-amber-500 hover:bg-amber-600 text-white md:p-6 cursor-pointer"
                   : "border-amber-500 text-amber-500 hover:bg-amber-50 md:p-6 cursor-pointer"
@@ -113,7 +109,7 @@ const BlogDetail = () => {
             <Button
               size="sm"
               onClick={() => setLanguage("urdu")}
-              className={`${
+              className={`$ {
                 language === "urdu"
                   ? "bg-amber-500 hover:bg-amber-600 text-white md:p-6 cursor-pointer"
                   : "border-amber-500 text-amber-500 hover:bg-amber-50 md:p-6 cursor-pointer"
@@ -124,7 +120,6 @@ const BlogDetail = () => {
           </div>
         </div>
 
-        {/* Blog Content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -133,11 +128,51 @@ const BlogDetail = () => {
             language === "urdu" ? "text-right font-nastaleeq" : ""
           }`}
         >
-          <div
-            dangerouslySetInnerHTML={{
-              __html: language === "english" ? blog.content : blog.contentUrdu,
-            }}
-          />
+          {language === "english"
+            ? blog.content.map((block, idx) => {
+                if (block.type === "heading")
+                  return (
+                    <h2 key={idx} className="text-2xl font-bold mb-4">
+                      {block.text}
+                    </h2>
+                  );
+                if (block.type === "paragraph")
+                  return (
+                    <p key={idx} className="mb-4">
+                      {block.text}
+                    </p>
+                  );
+                if (block.type === "list")
+                  return (
+                    <ul key={idx} className="list-disc pl-5 mb-4">
+                      {block.items.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  );
+              })
+            : blog.contentUrdu.map((block, idx) => {
+                if (block.type === "heading")
+                  return (
+                    <h2 key={idx} className="text-2xl font-bold mb-4">
+                      {block.text}
+                    </h2>
+                  );
+                if (block.type === "paragraph")
+                  return (
+                    <p key={idx} className="mb-4">
+                      {block.text}
+                    </p>
+                  );
+                if (block.type === "list")
+                  return (
+                    <ul key={idx} className="list-disc pl-5 mb-4">
+                      {block.items.map((item, i) => (
+                        <li key={i}>{item}</li>
+                      ))}
+                    </ul>
+                  );
+              })}
         </motion.div>
 
         <Separator className="my-8 bg-amber-200" />

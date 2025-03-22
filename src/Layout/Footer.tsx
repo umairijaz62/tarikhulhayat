@@ -23,7 +23,8 @@ export default function Footer() {
           </div>
           <p className="text-sm text-gray-700 leading-relaxed max-w-2xl mx-auto px-4">
             We highlight the bright aspects of Islamic history, filled with
-            guidance for today's era and enriched with the wisdom of the Quran.
+            guidance for today&apos;s era and enriched with the wisdom of the
+            Quran.
           </p>
         </div>
 

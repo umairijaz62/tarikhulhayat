@@ -1,7 +1,7 @@
 "use client";
 import BlogItem from "@/components/BlogCard/BlogItem";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { blogs } from "@/constants/blogs";
+import { blogs } from "@/constants/blogs/allblogs";
 import { categories } from "@/constants/categories";
 import { motion } from "framer-motion";
 import { Book, Heart, User, Users } from "lucide-react";
