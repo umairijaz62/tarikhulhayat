@@ -1,155 +1,179 @@
 "use client";
-import { Separator } from "@/components/ui/separator";
+
 import {
-  BookOpen,
-  Facebook,
-  Heart,
-  Instagram,
-  Linkedin,
-  Twitter,
+  BookOpenIcon,
+  FacebookIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  TwitterIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="w-full py-8 bg-amber-200 border-t border-amber-500">
-      <div className="container px-4 md:px-10 mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center gap-2 mb-2">
-              <BookOpen className="h-5 w-5 text-amber-500" />
-              <span className="text-lg font-bold text-slate-900">
-                Tarikh-ul-Hayat
-              </span>
-            </div>
-            <p className="text-sm text-gray-600 mt-2 pr-4">
-              Educating the new generation with authentic Islamic history,
-              inspiring them through real Islamic heroes, and offering
-              Quran-based solutions for modern life struggles.
-            </p>
-            <div className="mt-12 flex gap-8  items-end">
-              <Instagram className="text-gray-600 hover:text-amber-500 cursor-pointer" />
-              <Facebook className="text-gray-600 hover:text-amber-500 cursor-pointer" />
-              <Twitter className="text-gray-600 hover:text-amber-500 cursor-pointer" />
-              <Linkedin className="text-gray-600 hover:text-amber-500 cursor-pointer" />
-            </div>
+    <footer className="bg-amber-200 text-gray-800 border-t border-amber-300 py-8 md:py-12">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12">
+        {/* Top Section - Logo and Tagline */}
+        <div className="text-center mb-8 md:mb-12">
+          <div className="flex justify-center items-center gap-2 mb-3">
+            <BookOpenIcon className="h-6 w-6 md:h-8 md:w-8 text-amber-600" />
+            <span className="text-xl md:text-2xl font-extrabold text-slate-800">
+              Tarikh-ul-Hayat
+            </span>
           </div>
+          <p className="text-sm text-gray-700 leading-relaxed max-w-2xl mx-auto px-4">
+            Hum Islami tareekh ke roshan pehluon ko ujagar karte hain, jo aaj ke
+            dor me rehnumai aur Quran ki hikmat se bharpoor hain.
+          </p>
+        </div>
 
+        {/* Middle Section - Links and Categories */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
+          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold text-sm mb-3 text-gray-900">
+            <h3 className="font-semibold text-base mb-3 text-gray-900 border-b border-amber-200 pb-2">
               Quick Links
             </h3>
             <ul className="space-y-2">
               <li>
-                <div
-                  className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
-                  onClick={() => {
-                    window.location.href = "/";
-                  }}
+                <Link
+                  href="/"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
                 >
                   Home
-                </div>
+                </Link>
               </li>
               <li>
-                <div
-                  className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
-                  onClick={() => {
-                    window.location.href = "/about";
-                  }}
+                <Link
+                  href="/about"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
                 >
                   About
-                </div>
+                </Link>
               </li>
               <li>
-                <div
-                  className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
-                  onClick={() => {
-                    window.location.href = "/blogs";
-                  }}
+                <Link
+                  href="/blogs"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
                 >
                   Blogs
-                </div>
+                </Link>
               </li>
               <li>
-                <div
-                  className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
-                  onClick={() => {
-                    window.location.href = "/contact";
-                  }}
+                <Link
+                  href="/contact"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
                 >
                   Contact
-                </div>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Legal Links */}
+          <div>
+            <h3 className="font-semibold text-base mb-3 text-gray-900 border-b border-amber-200 pb-2">
+              Legal
+            </h3>
+            <ul className="space-y-2">
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tac"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
+                >
+                  Terms & Conditions
+                </Link>
               </li>
             </ul>
           </div>
 
           {/* Categories */}
           <div>
-            <h3 className="font-semibold text-sm mb-3 text-gray-900">
+            <h3 className="font-semibold text-base mb-3 text-gray-900 border-b border-amber-200 pb-2">
               Categories
             </h3>
             <ul className="space-y-2">
               <li>
-                <div
-                  className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
-                  onClick={() => {
-                    // Clear hash first to ensure event triggers even when already on page
-                    window.location.hash = "";
-                    window.location.href = "/blogs#Seerah";
-                  }}
+                <Link
+                  href="/blogs#Seerah"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
                 >
                   Seerah
-                </div>
+                </Link>
               </li>
               <li>
-                <div
-                  className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
-                  onClick={() => {
-                    window.location.hash = "";
-                    window.location.href = "/blogs#Khilafat-e-Rashida";
-                  }}
+                <Link
+                  href="/blogs#Khilafat-e-Rashida"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
                 >
                   Khilafat-e-Rashida
-                </div>
+                </Link>
               </li>
               <li>
-                <div
-                  className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
-                  onClick={() => {
-                    window.location.hash = "";
-                    window.location.href = "/blogs#Asraar-e-Deen";
-                  }}
+                <Link
+                  href="/blogs#Asraar-e-Deen"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
                 >
                   Asraar-e-Deen
-                </div>
+                </Link>
               </li>
               <li>
-                <div
-                  className="text-sm text-gray-600 hover:text-amber-500 transition-colors cursor-pointer"
-                  onClick={() => {
-                    window.location.hash = "";
-                    window.location.href = "/blogs#Qalb-e-Noor";
-                  }}
+                <Link
+                  href="/blogs#Qalb-e-Noor"
+                  className="text-sm hover:text-amber-600 transition-colors duration-200"
                 >
                   Qalb-e-Noor
-                </div>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <Separator className="my-6 bg-amber-100" />
+        {/* Social Links */}
+        <div className="flex justify-center gap-5 mb-6">
+          <a
+            href="#"
+            className="hover:text-amber-600 transition-colors duration-200 bg-amber-50 p-2 rounded-full"
+          >
+            <InstagramIcon className="w-5 h-5" />
+          </a>
+          <a
+            href="#"
+            className="hover:text-amber-600 transition-colors duration-200 bg-amber-50 p-2 rounded-full"
+          >
+            <FacebookIcon className="w-5 h-5" />
+          </a>
+          <a
+            href="#"
+            className="hover:text-amber-600 transition-colors duration-200 bg-amber-50 p-2 rounded-full"
+          >
+            <TwitterIcon className="w-5 h-5" />
+          </a>
+          <a
+            href="#"
+            className="hover:text-amber-600 transition-colors duration-200 bg-amber-50 p-2 rounded-full"
+          >
+            <LinkedinIcon className="w-5 h-5" />
+          </a>
+        </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-xs text-gray-500">
+        {/* Bottom Section - Copyright */}
+        <div className="border-t border-amber-300 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
+          <p>
             &copy; {new Date().getFullYear()} Tarikh-ul-Hayat. All rights
             reserved.
           </p>
-          <div className="flex items-center mt-2 md:mt-0">
-            <span className="text-xs text-gray-500 flex items-center">
-              Made with <Heart className="h-3 w-3 text-amber-500 mx-1" /> for
-              the Ummah
-            </span>
-          </div>
+          <p className="mt-2 md:mt-0">
+            Powered by <span className="font-semibold">Hayat Group</span>
+          </p>
         </div>
       </div>
     </footer>
