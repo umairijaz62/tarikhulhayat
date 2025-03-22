@@ -22,8 +22,8 @@ export default function Footer() {
             </span>
           </div>
           <p className="text-sm text-gray-700 leading-relaxed max-w-2xl mx-auto px-4">
-            Hum Islami tareekh ke roshan pehluon ko ujagar karte hain, jo aaj ke
-            dor me rehnumai aur Quran ki hikmat se bharpoor hain.
+            We highlight the bright aspects of Islamic history, filled with
+            guidance for today's era and enriched with the wisdom of the Quran.
           </p>
         </div>
 
