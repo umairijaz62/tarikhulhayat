@@ -1,5 +1,6 @@
 "use client";
 import { blogs } from "@/constants/blogs/allblogs";
+import { generateSlug } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ArrowRight, Badge, Clock } from "lucide-react";
 import Link from "next/link";
@@ -61,7 +62,7 @@ export default function Feature() {
                 variants={item}
                 transition={{ duration: 0.8 }}
               >
-                <Link href={`/blogs/${blog.id}`}>
+                <Link href={`/blogs/${generateSlug(blog.title)}`}>
                   <Card className="h-full flex flex-col hover:shadow-md transition-shadow cursor-pointer">
                     <CardHeader>
                       <div className="flex justify-between items-start">
@@ -98,8 +99,8 @@ export default function Feature() {
             transition={{ duration: 0.5, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            <Link href="/categories">
-              <Button className="mt-8 p-2 bg-amber-500 hover:bg-amber-600 rounded-md text-white group flex items-center  transition-all duration-300 overflow-hidden">
+            <Link href="/blogs">
+              <Button className="mt-8 p-2 bg-amber-500 hover:bg-amber-600 rounded-md text-white group flex items-center  transition-all duration-300 overflow-hidden cursor-pointer">
                 View All Article
                 <span className="inline-block max-w-0 opacity-0 ml-0 group-hover:max-w-[16px] group-hover:ml-2 group-hover:opacity-100 transition-all duration-300">
                   <ArrowRight className="h-4 w-4" />

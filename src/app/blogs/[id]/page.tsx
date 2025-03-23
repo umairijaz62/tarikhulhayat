@@ -1,8 +1,10 @@
 "use client";
+import CommentSection from "@/components/CommentsSection";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { blogs } from "@/constants/blogs/allblogs";
+import { generateSlug } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { ArrowLeft, CalendarDays, Clock, User } from "lucide-react";
 import Link from "next/link";
@@ -11,11 +13,25 @@ import { useState } from "react";
 
 const BlogDetail = () => {
   const pathname = usePathname();
-  const blogId = pathname.split("/")[2];
+  const slug = pathname.split("/")[2];
 
-  const blog = blogs.find((b) => b.id === blogId);
+  const blog = blogs.find((b) => generateSlug(b.title) === slug);
 
   const [language, setLanguage] = useState("english");
+
+  // Comment state
+  const [commentText, setCommentText] = useState("");
+  const [comments, setComments] = useState<string[]>([
+    "Great article!",
+    "MashaAllah bohot acha likha hai.",
+  ]);
+
+  const handleAddComment = () => {
+    if (commentText.trim() !== "") {
+      setComments((prev) => [commentText, ...prev]);
+      setCommentText("");
+    }
+  };
 
   if (!blog) {
     return (
@@ -28,7 +44,7 @@ const BlogDetail = () => {
             The article you&apos;re looking for doesn&apos;t exist or has been
             removed.
           </p>
-          <Link href="/categories">
+          <Link href="/blogs">
             <Button className="bg-amber-500 hover:bg-amber-600 text-white">
               Browse Articles
             </Button>
@@ -47,8 +63,9 @@ const BlogDetail = () => {
       className="container px-4 md:px-6 lg:px-8 py-12"
     >
       <div className="max-w-4xl mx-auto relative">
+        {/* Back Button */}
         <div className="mb-8">
-          <Link href="/categories">
+          <Link href="/blogs">
             <Button variant="ghost" size="sm" className="hover:bg-amber-100">
               <ArrowLeft className="mr-2 h-4 w-4" />
               Back to Articles
@@ -56,6 +73,7 @@ const BlogDetail = () => {
           </Link>
         </div>
 
+        {/* Blog Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,6 +103,7 @@ const BlogDetail = () => {
           </div>
         </motion.div>
 
+        {/* Blog Image */}
         <div className="relative w-full h-[300px] mb-4 rounded-lg overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
@@ -93,38 +112,25 @@ const BlogDetail = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
         </div>
 
+        {/* Language Switch */}
         <div className="flex justify-end mb-8">
-          <div className="flex items-center gap-2">
-            <Button
-              size="sm"
-              onClick={() => setLanguage("english")}
-              className={`$ {
-                language === "english"
-                  ? "bg-amber-500 hover:bg-amber-600 text-white md:p-6 cursor-pointer"
-                  : "border-amber-500 text-amber-500 hover:bg-amber-50 md:p-6 cursor-pointer"
-              }`}
-            >
-              English
-            </Button>
-            <Button
-              size="sm"
-              onClick={() => setLanguage("urdu")}
-              className={`$ {
-                language === "urdu"
-                  ? "bg-amber-500 hover:bg-amber-600 text-white md:p-6 cursor-pointer"
-                  : "border-amber-500 text-amber-500 hover:bg-amber-50 md:p-6 cursor-pointer"
-              }`}
-            >
-              اردو
-            </Button>
-          </div>
+          <Button
+            size="sm"
+            onClick={() =>
+              setLanguage((prev) => (prev === "english" ? "urdu" : "english"))
+            }
+            className="border-amber-500 text-amber-500 hover:bg-amber-50 md:p-6 cursor-pointer"
+          >
+            {language === "english" ? "اردو" : "English"}
+          </Button>
         </div>
 
+        {/* Blog Content */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className={`prose max-w-none text-gray-700 ${
+          className={`prose max-w-none text-gray-700 mb-8 ${
             language === "urdu" ? "text-right font-nastaleeq" : ""
           }`}
         >
@@ -177,6 +183,7 @@ const BlogDetail = () => {
 
         <Separator className="my-8 bg-amber-200" />
       </div>
+      <CommentSection slug={slug} />
     </motion.div>
   );
 };

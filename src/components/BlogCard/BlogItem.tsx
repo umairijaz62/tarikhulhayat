@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
+import { generateSlug } from "@/lib/utils";
 import { ArrowRight, Clock } from "lucide-react";
 
 interface BlogItemProps {
@@ -17,7 +18,9 @@ const BlogItem: React.FC<BlogItemProps> = ({ blog }) => {
   return (
     <div
       className="cursor-pointer"
-      onClick={() => (window.location.href = `/blogs/${blog.id}`)}
+      onClick={() =>
+        (window.location.href = `/blogs/${generateSlug(blog.title)}`)
+      }
     >
       <Card className="h-full hover:shadow-md transition-shadow border-amber-100">
         <CardContent className="p-6">

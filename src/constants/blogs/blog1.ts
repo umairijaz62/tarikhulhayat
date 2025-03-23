@@ -2,8 +2,8 @@ import { Blog } from "../blogtypes";
 
 export const blog1: Blog = {
   id: "1",
-  title: "Islamic History",
-  excerpt: "This is paragraph.This is paragraph.This is paragraph.This is paragraph.",
+  title: "Islamic Golden Age: Contributions to Science and Medicine",
+  excerpt: "Explore how Muslim scholars revolutionized science, medicine, and mathematics during the Islamic Golden Age.",
   author: "Umair",
   date: "2025-03-22",
   category: "Seerah",

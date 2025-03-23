@@ -1,6 +1,13 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import mongoose from "mongoose";
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
-}
+export const connectDB = async () => {
+  try {
+    if (mongoose.connections[0].readyState) return;
+    await mongoose.connect(process.env.MONGODB_URI as string, {
+      dbName: "Tarikh-ul-Hayat",
+    });
+    console.log("✅ MongoDB Connected Successfully");
+  } catch (error) {
+    console.log("❌ MongoDB Connection Failed:", error);
+  }
+};
