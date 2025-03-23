@@ -19,20 +19,6 @@ const BlogDetail = () => {
 
   const [language, setLanguage] = useState("english");
 
-  // Comment state
-  const [commentText, setCommentText] = useState("");
-  const [comments, setComments] = useState<string[]>([
-    "Great article!",
-    "MashaAllah bohot acha likha hai.",
-  ]);
-
-  const handleAddComment = () => {
-    if (commentText.trim() !== "") {
-      setComments((prev) => [commentText, ...prev]);
-      setCommentText("");
-    }
-  };
-
   if (!blog) {
     return (
       <div className="container px-4 md:px-6 py-12">
