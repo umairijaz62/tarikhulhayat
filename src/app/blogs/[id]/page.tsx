@@ -168,8 +168,8 @@ const BlogDetail = () => {
         </motion.div>
 
         <Separator className="my-8 bg-amber-200" />
+        <CommentSection slug={slug} />
       </div>
-      <CommentSection slug={slug} />
     </motion.div>
   );
 };
